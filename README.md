@@ -38,10 +38,8 @@ Hancom does not allow re-distribution. Curl or Wget do not appear to work to dow
 
 ## Build
 
-Basically, git clone, download hwpviewer deb file, and run
-gen-dockerfile.sh.
+Basically, git clone, download hwpviewer deb file to the directory, and make.
 
-Let's do git clone, and cd to the directory:
 ```
 $ git clone https://github.com/kwstephenkim/hwpviewer.git
 $ cd hwpviewer
@@ -52,40 +50,16 @@ has to download it from Hancom website. We assume the file name is
 this:
   hancomoffice-hwpviewer-Ubuntu-amd64.deb
 
-The file should be in the hwpviewer directory.
+The file should be in the hwpviewer directory. If the file name is different, Dockerfile should be modified.
 
-Now, run the gen-dockerfile.sh script:
+Now, run simply run "make" for the first time:
 ```
-$ ./gen-dockerfile.sh --help
-$ ./gen-dockerfile.sh myhwpviewer:1.0
-```
-
-Note that it builds a docker container with the host user's
-credentials except password. The default password is, as shown in the
-Dockerfile, sophiacorynn.
-
-# Run
-
-The docker container has the host user with the same uid. It also has
-/home/$USER like the host. Thus, it would be convenient to mount some
-host volumes to the docker container.
-
-```
-$ run-my-docker.sh --help
-$ run-my-docker.sh myhwpviewer:1.0
+$ make
 ```
 
-Basicallt, the script, and in turn, the container will run hwpviewer.
-
-If you are not familiar with docker, please note that all directories
-that hwpviewer sees are not in the host system, which means
-useless. To be useful, add -v options:
-
+Afterwards:
 ```
-$ run-my-docker.sh myhwpviewer:1.0 -v$HOME/workspace:$HOME/workspace -v$HOME/mine:$HOME/yours
+$ make run
 ```
 
-Firstly, the host $HOME/workspace is shared, and found by hwpviewer as $HOME/workspace. $HOME/mine on the host is shared but it goes in the container by different path: $HOME/yours.
-
-Please do not give -v$HOME:$HOME if you are unsure what you are doing. You could do -v$HOME:$HOME/any
-
+The script is a bit more complicated than needed. It's just because I have modified another Dockerfile I used for different purposes. 
