@@ -5,7 +5,7 @@ HOST_HOME="host"
 
 all: build run
 
-build: Dockerfile gen-dockerfile.sh hwpviewer.sh
+build: Dockerfile.template gen-dockerfile.sh hwpviewer.sh
 	./gen-dockerfile.sh ${IMAGE_NAME}
 
 run: run-my-docker.sh
