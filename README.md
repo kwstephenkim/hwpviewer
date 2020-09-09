@@ -8,14 +8,14 @@ We, Koreans, do know so well that we need an hwp viewer. Sadly, the
 government agencies, banks, schools, etc, do not have any hesitation
 to force the people to use a proprietary software owned by
 Hancom. Very often, the must-read documents are distributed in forms
-of .hwp, which hwpviewer seems to be the only solid software that runs
-locally and successfully parses the file.
+of .hwp; hwpviewer seems to be the only solid software that runs
+locally and successfully parses the file format.
 
-The thing is Hancom has more interest in Windows and Mac as most of
+The thing is that Hancom has more interest in Windows and Mac as most of
 the users do not use Linux. As Korean essential services are not
 available for Linux users, Koreans use Linux less.
 
-The "hwp viewer" update for Linux has not been fast-paced. It does not
+The "hwpviewer" update for Linux has not been fast-paced. It does not
 support wide variety of Linux distributions. It does not support
 latest versions of Debian and/or Ubuntu. 
 
